@@ -47,7 +47,7 @@ function HeaderSection() {
             <AppButton
               ariaLabel=""
               buttonType="primary"
-              onClick={() => (window.location.href = "tel:+14082104128")}
+              onClick={() => (window.location.href = "tel:+14084554739")}
               buttonText="Contact Me"
             />
             <AppButton
@@ -55,7 +55,7 @@ function HeaderSection() {
               buttonType="secondary"
               onClick={() => {
                 window.open(
-                  "https://drive.google.com/file/d/1gqF4aQGCRp8vGl5uWaODmjKixbUR2JzN/view?usp=sharing",
+                  "https://drive.google.com/file/d/13oBNpnT3maPPno-XkQSWCap3jONQ6qJX/view?usp=sharing",
                   "_blank"
                 );
               }}
