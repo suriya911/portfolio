@@ -67,7 +67,7 @@ function HeaderSection() {
           <div className="md:w-[650px] md:h-[350px] sm:h-[75vw] sm:w-[40vw] h-[120vw] w-[50vw] relative m-auto">
             <Image
               alt="Suriya's Avatar Image"
-              src={"/images/new-avatar.jpg"}
+              src={"/images/new-avatar.png"}
               fill
               loading={"lazy"}
               className="bg-backgroundColor-day dark:bg-backgroundColor-night"
