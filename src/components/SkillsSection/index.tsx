@@ -51,12 +51,6 @@ import AppSection from "../AppSection";
 import SkillsSubSection from "./SkillsSubSection";
 
 const programmingSkills = [
-  // {
-  //   id: "golang",
-  //   logo: GoLangLogo,
-  //   name: "Go",
-  //   url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-  // },
   {
     id: "python",
     logo: PythonLogo,
@@ -74,7 +68,13 @@ const programmingSkills = [
     logo: JavaLogo,
     name: "Java",
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-  }
+  },
+  {
+    id: "typescript",
+    logo: TypescriptLogo,
+    name: "TypeScript",
+    url: "https://www.typescriptlang.org/docs/",
+  },
 ];
 
 const frontendSkills = [
@@ -153,7 +153,7 @@ const backendSkills = [
     logo: KafkaLogo,
     name: "Apache Kafka",
     url: "https://expressjs.com/en/api.html",
-  }
+  },
 ];
 
 const databaseSkills = [
@@ -201,7 +201,7 @@ const dataEngineeringSkills = [
     logo: PineconeLogo,
     name: "Pinecone",
     url: "https://docs.docker.com/",
-  }
+  },
 ];
 
 const machineLearningSkills = [
@@ -228,7 +228,7 @@ const machineLearningSkills = [
     logo: PythonLogo,
     name: "Pytorch",
     url: "https://docs.docker.com/",
-  }
+  },
 ];
 
 const monitoringSkills = [
@@ -295,7 +295,7 @@ const cloudSkills = [
     logo: AWSLogo,
     name: "AWS",
     url: "https://aws.amazon.com/",
-  }
+  },
   // {
   //   id: "rancher",
   //   logo: RancherLogo,
@@ -309,17 +309,32 @@ function SkillsSection() {
     <AppSection headerTxt={SKILLS}>
       <div className="flex lg:flex-row max-lg:flex-col-reverse flex-col sm:gap-12 gap-9 section-content-padding">
         <div className="lg:basis-2/4 basis-full flex flex-col sm:gap-12 gap-9">
-          <SkillsSubSection headerTxt={"Programming Languages"} skills={programmingSkills} />
-          <SkillsSubSection headerTxt={"CI/CD and Cloud"} skills={cloudSkills} />
-          <SkillsSubSection headerTxt={"Data Engineering"} skills={dataEngineeringSkills} />
-          <SkillsSubSection headerTxt={"Monitoring"} skills={monitoringSkills} />
+          <SkillsSubSection
+            headerTxt={"Programming Languages"}
+            skills={programmingSkills}
+          />
+          <SkillsSubSection
+            headerTxt={"CI/CD and Cloud"}
+            skills={cloudSkills}
+          />
+          <SkillsSubSection
+            headerTxt={"Data Engineering"}
+            skills={dataEngineeringSkills}
+          />
+          <SkillsSubSection
+            headerTxt={"Monitoring"}
+            skills={monitoringSkills}
+          />
         </div>
 
         <div className="lg:basis-2/4 basis-full flex flex-col sm:gap-12 gap-9">
           <SkillsSubSection headerTxt={"Backend"} skills={backendSkills} />
           <SkillsSubSection headerTxt={"Databases"} skills={databaseSkills} />
           <SkillsSubSection headerTxt={"Frontend"} skills={frontendSkills} />
-          <SkillsSubSection headerTxt={"Machine Learning"} skills={machineLearningSkills} />
+          <SkillsSubSection
+            headerTxt={"Machine Learning"}
+            skills={machineLearningSkills}
+          />
         </div>
       </div>
     </AppSection>
