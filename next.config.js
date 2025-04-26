@@ -3,6 +3,7 @@ const nextConfig = {
   // Enable strict mode and SWC minification for performance and code quality
   reactStrictMode: true,
   swcMinify: true,
+  output: 'standalone',
 
   // Custom Webpack configuration
   webpack(config) {

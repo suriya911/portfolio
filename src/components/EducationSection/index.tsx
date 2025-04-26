@@ -4,27 +4,30 @@ import { EDUCATION } from "@/constants/menu";
 import Image from "next/image";
 import AppText from "../AppText";
 
-const educations = [
+const educationArr = [
   {
-    id: "MSE",
-    date: "Aug 2024 - May 2026",
-    course: "Master's in General Engineering",
-    name: "San Jose State University",
-    logoURL: "/images/sjsu_logo.png",
-    url: "https://www.sjsu.edu/",
-    place: "San Jose, USA",
-    grade: "3.43/4 GPA",
+    id: "edu1",
+    degree: "Master of Science in Engineering",
+    university: "San Jose State University",
+    universityUrl: "https://www.sjsu.edu/",
+    universityLogoUrl: "/images/sjsu_logo.png",
+    duration: "Aug 2024 - May 2026",
+    details: [
+      "CGPA: 3.4/4",
+      "Specialization: AI/ML & Cloud Technologies"
+    ],
   },
   {
-    id: "B.Tech",
-    date: "Nov 2020 - April 2024",
-    course: "Bachelor of Technology in Information Technology",
-    name: "R.M.D. Engineering College",
-    logoURL: "/images/rmd.png",
-    url: "https://rmd.ac.in/",
-    place: "Chennai, India",
-    grade: "9.32/10 CGPA",
-  },
+    id: "edu2",
+    degree: "Bachelor of Technology in Information Technology",
+    university: "Anna University",
+    universityUrl: "https://www.annauniv.edu/",
+    universityLogoUrl: "/images/anna_univ_logo.png",
+    duration: "Nov 2020 - April 2024",
+    details: [
+      "CGPA: 9.32/10"
+    ],
+  }
 ];
 
 function EducationSection() {
@@ -32,7 +35,7 @@ function EducationSection() {
   const observerRefs = useRef<{ [key: string]: IntersectionObserver }>({});
 
   useEffect(() => {
-    educations.forEach((education) => {
+    educationArr.forEach((education) => {
       if (!cardRefs.current) return;
       const cardRef = cardRefs.current[education.id];
       if (!cardRef) return;
@@ -56,7 +59,7 @@ function EducationSection() {
     });
 
     return () => {
-      educations.forEach((education) => {
+      educationArr.forEach((education) => {
         observerRefs.current[education.id].disconnect();
       });
     };
@@ -65,26 +68,26 @@ function EducationSection() {
   return (
     <AppSection headerTxt={EDUCATION}>
       <div className="section-content-padding grid lg:grid-cols-2 grid-cols-1 items-stretch gap-4">
-        {educations.map((education) => {
+        {educationArr.map((education) => {
           return (
             <div
               className="group rounded-md bg-backgroundColor-card-day dark:bg-backgroundColor-card-night sm:p-6 p-3 border-2 border-borderColor opacity-0 transition-opacity duration-1000 ease-linear"
               ref={(el) => (cardRefs.current[education.id] = el)}
               key={education.id}
             >
-              <a href={education.url} target="_blank">
+              <a href={education.universityUrl} target="_blank">
                 <div className="flex gap-3 items-center">
                   <div className="relative h-16 w-16 rounded-md">
                     <Image
-                      alt={education.name}
-                      src={education.logoURL}
+                      alt={education.university}
+                      src={education.universityLogoUrl}
                       fill
                       loading={"lazy"}
                     />
                   </div>
                   <div className="flex-1 flex flex-col gap-0.5">
                     <AppText textTag="h3" medium semiBold defaultColor>
-                      {education.name}
+                      {education.university}
                     </AppText>
                     <AppText
                       textTag="p"
@@ -92,13 +95,13 @@ function EducationSection() {
                       tertiary
                       customClass="group-hover:text-primaryColor"
                     >
-                      {education.place}
+                      {education.universityUrl}
                     </AppText>
                   </div>
                 </div>
                 <div className="flex flex-col align-center mt-4 gap-0.5">
                   <AppText textTag="p" default defaultColor bold>
-                    {education.course}
+                    {education.degree}
                   </AppText>
                   <AppText
                     textTag="p"
@@ -107,7 +110,7 @@ function EducationSection() {
                     semiBold
                     customClass="group-hover:text-primaryColor"
                   >
-                    {education.date}
+                    {education.duration}
                     <AppText
                       textTag="span"
                       medium
@@ -124,7 +127,7 @@ function EducationSection() {
                       semiBold
                       customClass="invisible group-hover:visible group-hover:text-primaryColor"
                     >
-                      {`${education.grade}`}
+                      {education.details.join(", ")}
                     </AppText>
                   </AppText>
                 </div>

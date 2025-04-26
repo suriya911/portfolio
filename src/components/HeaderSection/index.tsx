@@ -32,14 +32,14 @@ function HeaderSection() {
                 textArr={[
                   "AI/ML Engineer",
                   "Data Scientist",
-                  "APP Developer (Android/IOS)",
-                  "AWS Developer",
-                  "FullStack Developer",
+                  "Full Stack Developer",
+                  "Cloud Engineer",
+                  "DevOps Engineer"
                 ]}
               />
             </div>
             <AppText textTag="p" medium defaultColor customClass="mt-4 mb-4">
-              {`"Fuelled by curiosity and creativity, I thrive on exploring the limitless possibilities of Artificial Intelligence, Cloud Computing, and App Development. My mission is to transform bold ideas into impactful solutions that inspire progress and redefine digital innovation."`}
+              {`"Passionate about leveraging cutting-edge technologies to solve complex problems. With expertise in AI/ML, cloud computing, and full-stack development, I strive to create innovative solutions that drive business growth and enhance user experiences."`}
             </AppText>
             <ContactLogos />
           </div>

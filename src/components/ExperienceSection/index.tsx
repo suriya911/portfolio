@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import classNames from "classnames";
 import AppSection from "../AppSection";
 import { EXPERIENCE } from "@/constants/menu";
@@ -8,62 +8,39 @@ import Image from "next/image";
 const experienceArr = [
   {
     id: "Job1",
-    role: "Peer Mentor",
+    role: "Student Assistant, 3D Unity Development",
     company: "San Jose State University",
     companyUrl: "https://www.sjsu.edu/",
     companyLogoUrl: "/images/sjsu_logo.png",
-    workingPeriod: "December 2023 - May 2024",
+    workingPeriod: "Jan 2025 - Present",
     highlights: [
-      `Offering personalized guidance to new students on academic and professional development.`,
-      `Assisting with course selection and academic planning to ensure a successful university experience.`,
-      `Providing support in finding internships and job opportunities, enhancing employability skills.`,
-      `Facilitating connections with industry professionals and alumni for career growth and mentorship opportunities.`,
-      `Focused on individual student needs for a tailored mentoring experience.`
+      `Developed interactive 3D simulation models in Unity, integrating precise controls for realistic user experiences.`,
+      `Improved rendering performance and physics interactions, increasing frame rates by 20%.`
     ],
   },
   {
     id: "Job2",
-    role: "Software Engineer",
-    company: "Youngsoft India Pvt Ltd.",
-    companyUrl: "https://youngsoft.in/",
-    companyLogoUrl: "/images/YSI_logo.png",
-    workingPeriod: "July 2021 - July 2023",
+    role: "Member, Machine Learning SJSU Club",
+    company: "San Jose State University",
+    companyUrl: "https://www.sjsu.edu/",
+    companyLogoUrl: "/images/sjsu_logo.png",
+    workingPeriod: "Aug 2024 – Present",
     highlights: [
-      `Orchestrated an end-to-end manufacturing automation solution leveraging AWS services for seamless data collection
-      and process it further to show analytics in QuickSight; reconstructed communication flow among 4 different plants.`,
-      `Devised predictive maintenance models using ML techniques with Amazon Sagemaker, substantially reducing
-      equipment failures and projecting potential revenue growth of 3-4 times`,
-      `Integrated Rapid Upper Limb Assessment (RULA) scoring methodology, employing AWS services including S3 and
-      Kinesis Video Streaming to manage patient videos frame-by-frame and derive insights for optimal posture.`,
-      `Enhanced runtime efficiency by 25% and accuracy by 4% through techniques including hyperparameter tuning, lowess
-      smoothing, and multithreading.`,
-      `Researched, and deployed Testim, AI automated testing tool after thorough evaluation of multiple options, aligning
-      precisely with project needs which makes the testing work faster by atleast 40%.`
-
+      `Developed an audio-based multimodal ML model using stacked ensemble methods, improving smart home voice command recognition by 25%.`,
+      `Applied information-theoretic tools to compress RL state spaces, enhancing policy interpretability and generalization using unsupervised learning techniques.`
     ],
   },
   {
     id: "Job3",
-    role: "Web Development Intern",
-    company: "CSKA Automation Services Pvt Ltd. ",
-    companyUrl: "https://www.cskaa.com/index.html",
-    companyLogoUrl: "/images/cskaa_logo.png",
-    workingPeriod: "Feb 2021 - June 2021",
+    role: "Data Analyst Intern",
+    company: "E-Parisaraa Pvt. Ltd.",
+    companyUrl: "https://eparisaraa.com/",
+    companyLogoUrl: "/images/eparisaraa_logo.png",
+    workingPeriod: "May 2023 – Nov 2023",
     highlights: [
-      `Resolved bugs in Django backend to optimize performance and developed user-friendly frontend using CSS and
-      Bootstrap for Face Recognition and Video KYC projects.`,
-      `Collaborated to troubleshoot and promptly resolve software issues, contributing to on-time project delivery.`
-    ],
-  },
-  {
-    id: "Job4",
-    role: "SQL Intern",
-    company: "Celebal Technologies Pvt Ltd",
-    companyUrl: "https://celebaltech.com/",
-    companyLogoUrl: "/images/celebal-logo.webp",
-    workingPeriod: "May 2020 - Jul 2020",
-    highlights: [
-      `Designed & Optimized SQL stored procedures and functions, achieving a 20% performance boost in CRUD operations.`
+      `Improved material recovery accuracy by 20% by analyzing live crushing and dismantling data using Python and SQL.`,
+      `Created interactive Tableau dashboards, reducing reporting time by 40% and accelerating high-value batch decisions.`,
+      `Built predictive models for yield forecasting, increasing revenue per batch by 12% and profit margins by 9%.`
     ],
   },
 ];
@@ -77,7 +54,7 @@ function ExperienceSection() {
     experienceArr.forEach(experience => {
       const timeLineRef = timeLineRefs.current[experience.id];
 
-      if(!timeLineRef) return;
+      if (!timeLineRef) return;
 
       const obsCallBack = function (entries: IntersectionObserverEntry[]) {
         const [entry] = entries;
@@ -128,9 +105,9 @@ function ExperienceSection() {
                 className={classNames(
                   `bg-backgroundColor-card-day dark:bg-backgroundColor-card-night h-full rounded-md relative p-4 border-b-4 border-borderColor hover:border-primaryColor-light lg:w-[45%] w-[calc(100%-24px)] left-[44px] transition-all duration-500 ease-in-out`,
                   index % 2 === 0 &&
-                    `lg:left-0 after:content-[''] after:absolute after:h-2 after:w-2 after:rotate-45 after:bg-backgroundColor-card-day dark:after:bg-backgroundColor-card-night lg:after:left-[calc(100%-4px)] after:-left-[4px] after:top-6`,
+                  `lg:left-0 after:content-[''] after:absolute after:h-2 after:w-2 after:rotate-45 after:bg-backgroundColor-card-day dark:after:bg-backgroundColor-card-night lg:after:left-[calc(100%-4px)] after:-left-[4px] after:top-6`,
                   index % 2 !== 0 &&
-                    `lg:left-[55%] after:content-[''] after:absolute after:h-2 after:w-2 after:rotate-45 after:bg-backgroundColor-card-day dark:after:bg-backgroundColor-card-night after:-left-[4px] after:top-6`
+                  `lg:left-[55%] after:content-[''] after:absolute after:h-2 after:w-2 after:rotate-45 after:bg-backgroundColor-card-day dark:after:bg-backgroundColor-card-night after:-left-[4px] after:top-6`
                 )}
               >
                 <AppText textTag="h3" extraMedium bold defaultColor>
@@ -142,11 +119,11 @@ function ExperienceSection() {
                 <ul className="list-disc p-4 marker:text-textColor-primary-day dark:marker:text-textColor-primary-night">
                   {experience.highlights.map((highlight, index) => {
                     return (
-                        <li key={index}>
-                          <AppText textTag="p" default defaultColor>
-                            {highlight}
-                          </AppText>
-                        </li>
+                      <li key={index}>
+                        <AppText textTag="p" default defaultColor>
+                          {highlight}
+                        </AppText>
+                      </li>
                     );
                   })}
                 </ul>
